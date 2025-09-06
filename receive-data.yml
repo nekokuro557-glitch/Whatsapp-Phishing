@@ -1,0 +1,15 @@
+name: Receive Data
+
+on:
+  push:
+    paths:
+      - 'data/**'
+
+jobs:
+  receive-data:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Print received data
+      run: cat data/received-data.json
